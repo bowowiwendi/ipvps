@@ -2,7 +2,6 @@
 let data = [
   { name: "Hamidstore", expiration: "2025-05-17", ip: "165.22.106.236" },
   { name: "biznetid", expiration: "2026-04-10", ip: "103.127.134.151" },
-  { name: "Wendi1", expiration: "2026-04-11", ip: "157.230.253.167" },
 ];
 
 // Function to render the table
@@ -86,6 +85,26 @@ function clearInputs() {
   document.getElementById("name").value = "";
   document.getElementById("expiration").value = "";
   document.getElementById("ip").value = "";
+}
+
+// Function to generate file content
+function generateFile() {
+  let fileContent = "#limit\n";
+  data.forEach((entry) => {
+    fileContent += `### ${entry.name} ${entry.expiration} ${entry.ip}\n`;
+  });
+
+  // Display the file content in the textarea
+  document.getElementById("output").value = fileContent;
+
+  // Create a downloadable file
+  const blob = new Blob([fileContent], { type: "text/plain" });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = "ip-registrations.txt";
+  a.click();
+  URL.revokeObjectURL(url);
 }
 
 // Initial render
