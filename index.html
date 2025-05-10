@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CRUD IP Management</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    table, th, td {
+      border: 1px solid black;
+    }
+    th, td {
+      padding: 10px;
+      text-align: left;
+    }
+    .hidden {
+      display: none;
+    }
+    button {
+      margin: 5px;
+      padding: 5px 10px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>CRUD IP Management</h1>
+  <div>
+    <input type="text" id="name" placeholder="Name">
+    <input type="date" id="expiration" placeholder="Expiration Date">
+    <input type="text" id="ip" placeholder="IP Address">
+    <button onclick="addEntry()">Add</button>
+  </div>
+  <table id="ipTable">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Expiration</th>
+        <th>IP</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Dynamic rows will be generated here -->
+    </tbody>
+  </table>
+
+  <script src="script.js"></script>
+</body>
+</html>
