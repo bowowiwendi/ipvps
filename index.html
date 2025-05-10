@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CRUD IP Management</title>
+  <title>IP Registration CRUD</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -21,23 +21,26 @@
       padding: 10px;
       text-align: left;
     }
-    .hidden {
-      display: none;
-    }
     button {
       margin: 5px;
       padding: 5px 10px;
       cursor: pointer;
     }
+    textarea {
+      width: 100%;
+      height: 200px;
+      margin-top: 20px;
+    }
   </style>
 </head>
 <body>
-  <h1>CRUD IP Management</h1>
+  <h1>IP Registration CRUD</h1>
   <div>
     <input type="text" id="name" placeholder="Name">
     <input type="date" id="expiration" placeholder="Expiration Date">
     <input type="text" id="ip" placeholder="IP Address">
     <button onclick="addEntry()">Add</button>
+    <button onclick="generateFile()">Generate File</button>
   </div>
   <table id="ipTable">
     <thead>
@@ -52,7 +55,7 @@
       <!-- Dynamic rows will be generated here -->
     </tbody>
   </table>
-
-  <script src="script.js"></script>
+  <textarea id="output" readonly placeholder="Generated file content will appear here..."></textarea>
 </body>
+<script src="script.js"></script>
 </html>
